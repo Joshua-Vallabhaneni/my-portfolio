@@ -12,46 +12,49 @@ header {
     background: #263238;
     color: white;
     padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    text-align: left;
+    text-align: center;
 }
 
-.header-left {
+.header-content {
+    padding-bottom: 20px;
+}
+
+.header-icons {
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.header-right {
-    display: flex;
-    align-items: center;
-}
-
-.header-right .icon {
+.header-icons .icon {
     color: white;
-    margin-left: 20px;
+    margin: 0 10px;
     font-size: 28px;
     transition: color 0.3s;
 }
 
-.header-right .icon:hover {
+.header-icons .icon:hover {
     color: #B0BEC5;
 }
 
-header h1, header nav ul {
-    text-align: left;
+.fixed-nav {
+    background: #263238;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
 }
 
 nav ul {
     list-style: none;
     display: flex;
+    justify-content: center;
     padding: 0;
+    margin: 0;
 }
 
 nav ul li {
-    margin-right: 20px;
+    margin: 0 15px;
 }
 
 nav ul li a {
@@ -76,7 +79,7 @@ h2 {
     font-size: 22px;
 }
 
-.project {
+.project, .education, .activity {
     background: white;
     padding: 20px;
     border-radius: 10px;
@@ -87,38 +90,38 @@ h2 {
     text-align: left;
 }
 
-.project-details {
+.project-details, .education-details {
     display: flex;
     flex-direction: column;
 }
 
-.project-info {
+.project-info, .education-details {
     flex: 1;
 }
 
-.project h3 {
+.project h3, .education h3 {
     font-size: 20px;
     margin-bottom: 10px;
 }
 
-.project-tech {
+.project-tech, .education-details ul {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
 }
 
-.project-tech span {
+.project-tech span, .education-details ul li {
     margin-right: 10px;
 }
 
-.project-tech img {
+.project-tech img, .education img {
     width: 40px;
     height: 40px;
     margin-right: 10px;
     color: #666;
 }
 
-.project p {
+.project p, .education p, .activity p {
     margin-bottom: 10px;
 }
 
@@ -154,40 +157,23 @@ footer {
     width: 100%;
 }
 
-.education {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    margin-bottom: 40px;
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
     max-width: 800px;
-    margin: 20px auto;
+    margin: 0 auto;
+}
+
+.skill {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    text-align: left;
 }
 
-.education img {
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
-}
-
-.education-details {
-    flex: 1;
-}
-
-.education h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.education p, .education ul {
-    margin: 5px 0;
-}
-
-.coursework {
-    margin-top: 10px;
+.skill img {
+    width: 60px;
+    height: 60px;
 }
 
 .timeline {
@@ -239,6 +225,7 @@ footer {
 .timeline-item.right {
     left: 50%;
     text-align: left;
+    margin-right: 50px;
 }
 
 .timeline-item.right::after {
@@ -268,13 +255,19 @@ footer {
     position: relative;
 }
 
+.featured-logo {
+    width: 50px;
+    height: auto;
+    margin: 0 10px;
+}
+
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .project-details {
+    .project-details, .education-details {
         flex-direction: column;
     }
 
