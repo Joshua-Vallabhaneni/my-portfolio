@@ -86,16 +86,31 @@ h2 {
     max-width: 800px; /* Limit the width of each project card */
     margin: 20px auto; /* Center the project cards */
     text-align: left; /* Align text inside project cards to the left */
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.project-info {
+    flex: 1;
+}
+
+.project-image img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-left: 20px;
 }
 
 .project h3 {
     font-size: 20px;
     margin-bottom: 10px;
-}
-
-.project-details {
-    display: flex;
-    flex-direction: column;
 }
 
 .project-tech {
@@ -108,8 +123,9 @@ h2 {
     margin-right: 10px;
 }
 
-.project-tech i {
-    font-size: 24px;
+.project-tech img {
+    width: 40px;  /* Increased the size of the logos */
+    height: 40px;
     margin-right: 10px;
     color: #666;
 }
@@ -190,6 +206,11 @@ footer {
 
     .project-details {
         flex-direction: column;
+        text-align: center;
+    }
+
+    .project-image img {
+        margin: 20px auto 0;
     }
 
     .education {
