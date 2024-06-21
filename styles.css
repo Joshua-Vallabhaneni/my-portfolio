@@ -278,9 +278,16 @@ footer {
     }
 }
 
-/* Add this section to style the featured logos */
 .featured-logo {
     width: 60px;
     height: auto;
+    margin-left: 10px;
+    margin-right: 10px;
     vertical-align: middle;
+}
+
+.arrow {
+    font-size:20px;
+    font-weight: bold;
+    color: #333;
 }
