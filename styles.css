@@ -771,3 +771,20 @@ footer {
         align-items: center;
     }
 }
+
+.award-box, .course-box {
+    background: linear-gradient(145deg, #cae8ff, #f2faff);
+    border-radius: 20px;
+    padding: 10px 20px;
+    display: inline-block;
+    margin: 5px;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.award-box i, .course-box i {
+    margin-right: 5px;
+    color: #1a73e8; /* This will apply only if you decide to add icons to course boxes as well */
+}
+
