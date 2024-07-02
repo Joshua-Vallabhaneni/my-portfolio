@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -26,16 +25,16 @@
                 </a>
             </div>
         </div>
-        <nav class="fixed-nav">
-            <ul>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#activities">Activities</a></li>
-            </ul>
-        </nav>
     </header>
+    <nav class="fixed-nav">
+        <ul>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#activities">Extracurriculars</a></li>
+        </ul>
+    </nav>
     <main>
         <section id="projects">
             <h2>My Projects</h2>
@@ -392,7 +391,7 @@
             </div>
         </section>        
         <section id="activities">
-            <h2>My Involvement</h2>
+            <h2>My Extracurriculars</h2>
             <div class="activity">
                 <h3>xFoundry @ UMD</h3>
                 <p>Selected as one of 30 students for the inaugural cohort of xFoundry, a 15-month program focused on entrepreneurship and product development. Leading the development of an AI-enabled system for real-time detection, tracking, and notification of active shooter events in 1,400+ K-12 schools and colleges, supported by a $250K-$2M investment.</p>
@@ -415,5 +414,48 @@
     <footer>
         <p>© 2024 Joshua Vallabhaneni</p>
     </footer>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    const headerOffset = 70;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        const sections = document.querySelectorAll('.main-section');
+        const navItems = document.querySelectorAll('.fixed-nav a');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-50% 0px -50% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navItems.forEach(item => {
+                        item.classList.toggle('active', item.getAttribute('href') === `#${id}`);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+    </script>
 </body>
 </html>

@@ -1,6 +1,5 @@
 body, html {
     margin: 0;
-    padding: 0;
     font-family: 'Roboto', sans-serif;
     background: #f9f9f9;
     color: #333;
@@ -16,7 +15,7 @@ body, html {
 }
 
 header {
-    background: #263238;
+    background: #1976D2;
     color: white;
     padding: var(--header-top-padding) 20px var(--header-bottom-padding);
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -101,12 +100,18 @@ nav ul li a:hover {
     }
 }
 
+
 .fixed-nav {
-    background: #263238;
-    position: sticky;
+    background: rgba(25, 118, 210, 0.8);
+    position: fixed;
     top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto; /* This will be determined by content */
     z-index: 1000;
-    padding: 15px 0;  /* Increased padding */
+    padding: 15px 30px; /* Added horizontal padding */
+    transition: all 0.3s ease;
+    border-radius: 20px 20px 20px 20px; /* Rounded bottom corners */
 }
 
 .fixed-nav ul {
@@ -118,7 +123,7 @@ nav ul li a:hover {
 }
 
 .fixed-nav ul li {
-    margin: 0 20px;  /* Increased margin */
+    margin: 0 15px; /* Adjusted spacing */
 }
 
 .fixed-nav ul li a {
@@ -151,6 +156,11 @@ nav ul li a:hover {
 .fixed-nav ul li a:hover::after {
     visibility: visible;
     transform: scaleX(1);
+}
+
+.fixed-nav.scrolled {
+    background: rgba(25, 118, 210, 0.8); /* semi-transparent background */
+    padding: 10px 0; /* slightly smaller padding */
 }
 
 main {
