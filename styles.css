@@ -25,6 +25,7 @@ header {
 .header-content {
     max-width: 800px;
     margin: 0 auto;
+    padding-top: 25px; /* Adjust this value as needed */
 }
 
 .header-content h1 {
@@ -412,14 +413,15 @@ footer {
     top: 15px;
     font-weight: bold;
     color: #2196F3;
+    font-size: 20px;
 }
 
 .timeline-item.left .timeline-date {
-    right: -200px;
+    right: -225px;
 }
 
 .timeline-item.right .timeline-date {
-    left: -200px;
+    left: -225px;
 }
 
 @media (max-width: 768px) {
